@@ -12,7 +12,7 @@ const port = 3000
 
 dotenv.config({path:"./.env"})
 
-app.use(cors())
+app.use(cors({origin:"*", credentials: true}))
 app.use(express.json())
 app.use(express.static("public"))
 const client = new Client(process.env.OCTOAI_TOKENS)
